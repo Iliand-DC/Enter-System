@@ -27,9 +27,9 @@ void Managment::getAccess(std::string _name, std::string _pass)
     if (userExist(_name))
     {
         if(checker.Check(findUser(_name), _pass))
-            std::cout << "Доступ получен." << std::endl;
+            std::cout << "Access successful." << std::endl;
         else
-            std::cout << "Пароль не подходит." << std::endl;
+            std::cout << "Access denied." << std::endl;
     }
 }
 void Managment::addUser(std::string _name, std::string _pass)
@@ -37,37 +37,37 @@ void Managment::addUser(std::string _name, std::string _pass)
     std::ofstream out("users.txt", std::ios::app);
     User newUser(_name, _pass);
     users.push_back(newUser);
+    addUserToTxt(_name, _pass);
+}
+void Managment::addUser(User _user)
+{
+    users.push_back(_user);
+    addUserToTxt(_user.getName(), _user.getPassword());
+    
+}
+void Managment::addUserToTxt(std::string _name, std::string _pass)
+{
+    std::ofstream out("users.txt", std::ios::app);
     if (out.is_open())
     {
         out << _name << std::endl << _pass << std::endl;
     }
     out.close();
 }
-void Managment::addUser(User _user)
+void Managment::readAllUsersFromTxt()
 {
-    users.push_back(_user);
-    std::ofstream out("users.txt", std::ios::app);
-    if (out.is_open())
-    {
-        out << _user.getName() << std::endl << _user.getPassword() << std::endl;
-    }
-    out.close();
-}
-Managment Managment::readAllUsersFromTxt(std::string nameOfFile)
-{
-    Managment managment;
     std::string nameLine;
     std::string passLine;
  
-    std::ifstream in(nameOfFile);
+    std::ifstream in("users.txt");
     if (in.is_open())
     {
         while (std::getline(in, nameLine))
         {
             std::getline(in, passLine);
-            managment.addUser(nameLine, passLine);
+            User newUser(nameLine, passLine);
+            users.push_back(newUser);
         }
     }
     in.close();
-    return managment;
 }
