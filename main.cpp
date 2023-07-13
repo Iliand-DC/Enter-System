@@ -1,6 +1,9 @@
 #include <iostream>
+#include "managment.h"
 int main()
 {
-    std::cout<<"Hello world!";
-    return 0;
+    Managment managment;
+    managment.readAllUsersFromTxt("users.txt");
+    managment.getAccess("Bob", "1234");
+    managment.getAccess("Tom", "1234");
 }

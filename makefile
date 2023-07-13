@@ -1,5 +1,5 @@
 TARGET = app
-SRCS = main.cpp
+SRCS = main.cpp user.cpp passwordChecker.cpp managment.cpp
 OBJS =$(SRCS:.cpp=.o)
 
 $(TARGET): $(OBJS)

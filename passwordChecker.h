@@ -1,6 +1,6 @@
 #ifndef PASSCHECKER_H
 #define PASSCHECKER_H
-#include "User.h"
+#include "user.h"
 
 class PasswordChecker
 {

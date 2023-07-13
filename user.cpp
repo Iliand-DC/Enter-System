@@ -1,4 +1,4 @@
-#include "User.h"
+#include "user.h"
 User::User(std::string _name, std::string _password)
 {
     name = _name;
