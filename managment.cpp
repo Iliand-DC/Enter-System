@@ -31,6 +31,7 @@ void Managment::getAccess(std::string _name, std::string _pass)
         else
             std::cout << "Access denied." << std::endl;
     }
+    else std::cout << "User is not exist." << std::endl;
 }
 void Managment::addUser(std::string _name, std::string _pass)
 {

@@ -1,9 +1,6 @@
 #include <iostream>
-#include "managment.h"
+#include "ui.h"
 int main()
 {
-    Managment managment;
-    managment.readAllUsersFromTxt();
-    managment.getAccess("Bob", "1234");
-    managment.getAccess("Tom", "1234");
+    menu();
 }
