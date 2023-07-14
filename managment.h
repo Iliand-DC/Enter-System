@@ -9,12 +9,12 @@
 class Managment
 {
 private:
-    std::vector<User> users;
     PasswordChecker checker;
     void addUserToTxt(std::string, std::string);
     bool userExist(std::string);
     User findUser(std::string);
 public:
+    std::vector<User> users;
     Managment();
     Managment(std::vector<User>);
     void getAccess(std::string, std::string);

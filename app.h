@@ -2,7 +2,7 @@
 #define UI_H
 #include "managment.h"
 
-void menu();
+void app();
 void info();
 
 #endif
@@ -15,10 +15,14 @@ void info()
     << "Введите номер действия: ";
 }
 
-void menu()
+void app()
 {
     Managment managment;
     managment.readAllUsersFromTxt();
+    for (auto item: managment.users)
+    {
+        std::cout << item.getName() << std::endl;
+    }
     char choise = 'a';
     std::string name, password;
     while (choise != '3')

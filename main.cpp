@@ -1,6 +1,6 @@
 #include <iostream>
-#include "ui.h"
+#include "app.h"
 int main()
 {
-    menu();
+    app();
 }

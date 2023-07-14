@@ -51,7 +51,7 @@ void Managment::addUserToTxt(std::string _name, std::string _pass)
     std::ofstream out("users.txt", std::ios::app);
     if (out.is_open())
     {
-        out << _name << std::endl << _pass << std::endl;
+        out << std::endl << _name << std::endl << _pass;
     }
     out.close();
 }
